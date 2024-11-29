@@ -43,7 +43,7 @@ function SignIn() {
       window.name =token
       localStorage.setItem("user", Jstring);
       Swal.fire({
-        title: "ບິນດີຕ້ອນຮັບທ່ານ ແອດມີນ",
+        title: "ຍິນດີຕ້ອນຮັບ",
         text: "ເຂົ້າສູ່ລະບົບສຳເລັດ",
         icon: "success",
         confirmButtonText: "ປິດ",

@@ -154,7 +154,7 @@ function Payment() {
     >
       <Bar/>
       <Heading mb={6} fontSize="3xl" textAlign="center" color="gray.700">
-        Payment Details
+       ລາຍລະອຽດຊຳລະ
       </Heading>
       
       <Stack spacing={8} mb={6}>
@@ -199,7 +199,7 @@ function Payment() {
       </Stack>
 
       <Badge fontSize="18px" colorScheme="red" mb={4}>
-        ໝາຍເຫດ: ຫຼັງຈາກຊຳລະແອດມິນຈະກວດສອບ 15-30 ນາທີ
+        ໝາຍເຫດ: ລໍຖ້າ 15-30 ນາທີ
       </Badge>
 
       <VStack spacing={6} align="stretch">
@@ -256,7 +256,7 @@ function Payment() {
           _hover={{ bg: "blue.600" }}
           isFullWidth
         >
-          Confirm Payment
+          ຊຳລະເງິນ
         </Button>
       </VStack>
     </Box>

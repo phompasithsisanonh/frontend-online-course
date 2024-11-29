@@ -75,14 +75,6 @@ function Bar() {
           >
             Contact
           </Link>
-          <Link
-            as={RouterLink}
-            to="/wait-payment"
-            color="white"
-            _hover={{ color: "blue.300" }}
-          >
-            Wait Payment
-          </Link>
         </HStack>
 
         <Spacer />
@@ -183,9 +175,6 @@ function Bar() {
               </Link>
               <Link as={RouterLink} to="/contact" onClick={onClose}>
                 Contact
-              </Link>
-              <Link as={RouterLink} to="/wait-payment" onClick={onClose}>
-                Wait Payment
               </Link>
             </VStack>
           </DrawerBody>

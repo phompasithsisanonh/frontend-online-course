@@ -147,8 +147,6 @@ function VideoList() {
   const token = window.name;
   const [completedLessons, setCompletedLessons] = useState(false);
   const [refreah, setRefreah] = useState("");
-  const [videos, setVideos] = useState([]);
-  const [progressData, setProgressData] = useState({});
   const userId = JSON.parse(localStorage.getItem("user")).user._id.trim();
   const handleEditToggle = async (lessonId, id_core, event) => {
     try {
@@ -205,73 +203,12 @@ function VideoList() {
       navigate("/mycourses");
       return;
     }
-    // const fetchVideosAndProgress = async () => {
-    //   try {
-    //     // Fetching courses
-    //     const url = `${process.env.REACT_APP_URL}/gethistory/${userId}`;
-    //     const res = await axios.get(url);
-    //     const userRecords = res.data.userRecord_more;
 
-    //     const videos = userRecords.map(
-    //       (record) => record.historycourseforpayment
-    //     );
-    //     const progressIds = userRecords.map(
-    //       (record) => record.historycourseforpayment
-    //     );
-    //     const cart = progressIds.map((record) => record.cart);
-    //     const course = cart.map((record) => record.courses);
-    //     const course1 = course.map((record) => record);
-    //     console.log(course1 );
-    //     setVideos(videos);
-    //     // // Fetching progress for each course
-    //     // const progressPromises = progressIds.map((id) =>
-    //     //   axios.get(`${process.env.REACT_APP_URL}/getprograss/${id}`, {
-    //     //     headers: {
-    //     //       "Content-Type": "application/json",
-    //     //       Authorization: `Bearer ${token}`,
-    //     //     },
-    //     //   })
-    //     // );
-
-    //     // const progressResponses = await Promise.all(progressPromises);
-    //     // const progressData = progressResponses.reduce((acc, res, index) => {
-    //     //   const totalScore = res.data.res_id.reduce(
-    //     //     (sum, item) => sum + (item.score || 0),
-    //     //     0
-    //     //   );
-    //     //   const percentage = Math.min((totalScore / 5) * 100, 100);
-    //     //   acc[progressIds[index]] = {
-    //     //     percentage: isNaN(percentage) ? 0 : parseInt(percentage),
-    //     //     completedLessons: res.data.res_id.map((item) => item.completedLessons),
-    //     //   };
-    //     //   return acc;
-    //     // }, {});
-
-    //     // setProgressData(progressData);
-    //     // console.log(progressData);
-    //     setLoading(false);
-    //   } catch (error) {
-    //     toast({
-    //       title: "Error",
-    //       description: "Failed to fetch data.",
-    //       status: "error",
-    //       duration: 4000,
-    //       isClosable: true,
-    //     });
-    //     setError("Failed to fetch data. Please try again.");
-    //     setLoading(false);
-    //   }
-    // };
-
-    // fetchVideosAndProgress();
     fetchcomment();
     fetprograss();
   }, [toast, token, navigate, idCarttoPayment, userId]);
 
   const handleLessonSelect = (lessonId) => {
-    // เมื่อคลิกที่หัวข้อหรือเล่นวีดีโอ จะอัพเดตสถานะว่าได้ดูหัวข้อนี้แล้ว
-
-    // สั่งให้เล่นวีดีโอ
     setSelectedVideo(lessonId);
   };
 

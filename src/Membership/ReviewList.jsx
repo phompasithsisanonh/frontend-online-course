@@ -75,7 +75,7 @@ const ReviewCard = ({ comment, name, rating, timeAgo }) => {
 
       <HStack spacing={4}>
         <Text fontSize="xs" color="gray.500">
-          เป็นประโยชน์หรือไม่
+          ເປັນປະໂຫຍດບໍ່?
         </Text>
         <IconButton
           icon={<FaThumbsUp />}
@@ -142,13 +142,17 @@ const ReviewList = ({ courseData }) => {
     <Box maxW="4xl" mx="auto" p={5}>
       <HStack spacing={2}>
         <StarIcon color="yellow.500" />
-        <Text fontSize="lg" fontWeight="bold" color="yellow.600">
-        </Text>
-          <StarIcon key={0} value={averageRating} color={0 < averageRating ? "yellow.500" : "gray.300"}/>)
+        <Text fontSize="lg" fontWeight="bold" color="yellow.600"></Text>
+        <StarIcon
+          key={0}
+          value={averageRating}
+          color={0 < averageRating ? "yellow.500" : "gray.300"}
+        />
+
         <Heading size="md">
           คะแนนหลักสูตร {averageRating.toFixed(1)} คะแนน
         </Heading>
-        <Text fontSize="md">• {totalRating} ລິວິວ</Text>
+        <Text fontSize="md">• {totalRating} ລີວິວ</Text>
       </HStack>
 
       <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={4} mt={4}>
@@ -170,7 +174,7 @@ const ReviewList = ({ courseData }) => {
           variant="outline"
           colorScheme="purple"
         >
-          {showAll ? "Show Less" : "ดูรีวิวทั้งหมด"}
+          {showAll ? "ປິດລີວິວ" : "ເບີ່ງລີວິວທັງໝົດ"}
         </Button>
       )}
     </Box>

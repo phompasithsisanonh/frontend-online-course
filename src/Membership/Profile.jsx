@@ -25,9 +25,6 @@ import {
   ModalCloseButton,
   ModalBody,
   ModalFooter,
-  CircularProgress,
-  CircularProgressLabel,
-  Image,
 } from "@chakra-ui/react";
 import { FaEdit, FaSave, FaCamera } from "react-icons/fa";
 import Bar from "./Bar";

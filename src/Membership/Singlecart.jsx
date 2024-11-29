@@ -32,14 +32,11 @@ import {
   AlertTitle,
   AlertDescription,
   Center,
-  Spinner,
   ButtonGroup,
 } from "@chakra-ui/react";
-import { CheckCircleIcon, StarIcon } from "@chakra-ui/icons";
+import { CheckCircleIcon } from "@chakra-ui/icons";
 import React, { useEffect, useState, useCallback } from "react";
 import Bar from "./Bar";
-import { Link } from "react-router-dom";
-import CourseList from "./CourseList";
 import ReviewList from "./ReviewList";
 import axios from "axios";
 import { FaPlayCircle } from "react-icons/fa";
@@ -120,7 +117,7 @@ const Singlecart = () => {
     };
     fetchHistory();
     fetchCourseData();
-  }, [idcourese, courseData?._id]);
+  }, [idcourese, courseData?._id,userId]);
 
   const renderLessons = (lessons) =>
     lessons.map((lesson, index) => (
@@ -219,7 +216,7 @@ const Singlecart = () => {
             borderColor="gray.200"
           >
             <Heading size="md" mb={4}>
-              สิ่งที่คุณจะได้รับเรียนรู้
+              ສິ່ງທີ່ທານຈະໄດ້ຮຽນຮູ້
             </Heading>
             <List spacing={3}>
               <ListItem>
@@ -230,7 +227,7 @@ const Singlecart = () => {
 
           {/* Course Content */}
           <Heading size="md" mt={8} mb={4}>
-            เนื้อหาหลักสูตร
+           ເນື້ອຫາຫຼັກສູດ
           </Heading>
           <Accordion allowToggle>{renderLessons(lessons)}</Accordion>
 
@@ -293,7 +290,7 @@ const Singlecart = () => {
                 width="full"
                 mt={2}
               >
-                เพิ่มไปตะกร้า
+                ເພີ່ມໄປກະຕ່າ
               </Button>
               <Button
                 variant="outline"
@@ -301,24 +298,24 @@ const Singlecart = () => {
                 width="full"
                 mt={2}
               >
-                ซื้อเลย
+                ຊື້ເລີຍ
               </Button>
             </ButtonGroup>
           )}
 
           <Box mt={5}>
             <Heading size="sm" mb={2}>
-              หลักสูตรที่เกี่ยวข้อง
+              ຫຼັກສູທີ່ກ່ຽວຂ້ອງ
             </Heading>
             <Flex wrap="wrap">
               <Badge colorScheme="blue" m={1}>
                 JavaScript
               </Badge>
               <Badge colorScheme="blue" m={1}>
-                การพัฒนาเว็บ
+                ການພັດທະນາເວັບ
               </Badge>
               <Badge colorScheme="blue" m={1}>
-                การพัฒนา
+                ການພັດທະນາ
               </Badge>
             </Flex>
           </Box>
@@ -360,7 +357,7 @@ const Singlecart = () => {
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>เรียนรู้จากวิดีโอนี้</ModalHeader>
+          <ModalHeader>Online course</ModalHeader>
           <ModalCloseButton />
           <ModalBody width={"400px"}>
             <iframe
