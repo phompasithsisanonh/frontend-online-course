@@ -220,7 +220,9 @@ function Dashboard() {
       </Center>
     );
   }
-
+if(!token){
+  return navigate('/login')
+}
   if (error) {
     return (
       <Center minH="100vh">
